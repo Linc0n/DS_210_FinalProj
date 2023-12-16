@@ -1,0 +1,28 @@
+This project utilizes data sourced from CollegeMsg.txt, a dataset tracking messaging activities of college students.
+The txt file has 3 columns: sender, receiver, and an unused column,  time since epoch. The program starts by running BFS on the raw data starting at the first node. 
+The data is sorted by descending order of degrees from the starting node into output.txt. Output.txt has two columns:  node and degree of separation from the starting node. This is followed by all the paths it took to arrive at the node.
+From there the display_graph function uses Output.txt  to visualize the graph's connectivity. Using the Plotters crate, it generates plots illustrating nodes and their degrees of separation and highlights connections.
+It generates 5 graphs for degrees 1 through 5 to visualize the graph's connectivity at varying separation levels. It draws connections between nodes it has traveled through to showcase the connectivity. 
+This is best illustrated by the 5th graph which only contains 1 node.
+It clearly shows how the 5th degree node is connected to each previous node in a lower degree until it reaches the first node. 
+One notable thing I found was how the program encountered unreachable nodes 1798, 229, 1813, 1797, 230, 1812, 1607, and 5 during the BFS traversal from the starting node.
+
+To run the code it only requires cargo run which then generates the 5 graphs using the function display_graph
+
+In depth graph descriptions:
+The first graph generated shows nodes directly connected to the starting node, displaying immediate connections.
+The second, third and fourth graphs reveal more complex connections, illustrating the vast connectivity of the data. 
+However, the fifth graph, at the maximum separation level, provides a comprehensive view of how the program works by depicting an isolated node. 
+It clearly shows how the final node is 5 degrees away from the starting node by drawing connections to the previous 4 nodes. 
+Each graph visualizes a deeper layer of the graph's connectivity, highlighting relationships at different separation levels and showing the extent of node reachability from the starting node.
+
+
+
+**************
+IMPORTANT NOTE:
+
+Unfortunently in the final stages of my project I made edits to how the program reads the starting node. I orgiginally had it as a string but it suddenly stopped working. I did my best to recover but I had made the
+mistake days ago and did not realize my program was not producing an output. I did not realize because I was looking at the graphs that a older version of the program made. In trying to fix it it caused further damage which is why
+the program produces errors. I did my best. I am sorry. It should be noted though that all the graphs sumbited were created by this program (albiet an older version) so hopefully that recieves partial credit.
+ At one point this program worked effectivley I really tried to go back and see what caused the problem but I was not able to figure it out in time.
+**************
