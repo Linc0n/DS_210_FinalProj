@@ -4,6 +4,7 @@ use std::collections::{HashMap, VecDeque};
 #[cfg(test)]
 mod tests {
     use super::bfs_with_path;
+    use std::collections::{HashMap};
 
     #[test]
     fn test_bfs_with_path() {
